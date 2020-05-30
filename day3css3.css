@@ -1,0 +1,18 @@
+h1
+{
+font-size: 24px;
+color: #0000FF;
+text-align: center;
+text-decoration: underline
+}
+
+
+
+
+table
+{
+ color:white;
+ background-image: linear-gradient(to bottom,rgb(51,204,255),rgb(255,153,204) 100%);
+ border:2px solid #000000;
+ border-style:dashed;
+}
