@@ -1,0 +1,211 @@
+<html>
+
+<head>
+
+	<style type="text/css">
+
+		h2{
+			margin-top: 30px;
+  			text-transform:uppercase;
+ 			color:red;
+		}
+		
+		#success{color: green;}
+		button{	color: darkgreen;border: 2px solid #ff8533;}
+
+		
+	</style>
+
+	<script>
+
+			c1 = 0,c2 = 0,c3 = 0,c4 = 0,c5 = 0,c6 = 0;
+
+         function details() {
+
+         	document.getElementById("result").style.border="5px solid red";
+    		document.getElementById("result").style.width="250px";   
+  
+     		n1 = document.getElementById("name").value;
+     		n2 = document.getElementById("uname").value;
+     		n3 = document.getElementById("pass").value;
+     		n4 = document.getElementById("repass").value;
+     		n5 = document.getElementById("email").value;
+     		n6 = document.getElementById("mob").value;
+     		c=0;
+
+     		if(n1.length==0 || n2.length==0 || n3.length==0 || n4.length==0 || n5.length==0 || n6.length==0)
+     		{
+	     		if(n1.length==0)
+	     		{
+	     				document.getElementById("ename").innerHTML = "Please enter the Name";	c1=0;	
+	     		}
+		     		if(n2.length==0)
+		     		{
+		     				document.getElementById("euname").innerHTML = "Please enter the User name";		c2=0;
+		     		}
+				     	if(n3.length==0)
+			     		{
+			     				document.getElementById("epass").innerHTML = "Please enter the Password";	c3=0;
+			     		}
+				     		if(n4.length==0)
+				     		{
+				     				document.getElementById("erepass").innerHTML = "Please enter the Re-enter Password";	c4=0;
+				     		}
+						     	if(n5.length==0)
+					     		{
+					     				document.getElementById("eemail").innerHTML = "Please enter the Email";		c5=0;
+					     		}
+								    if(n6.length==0)
+						     		{
+						     				document.getElementById("emob").innerHTML = "Please enter the Mobile Number";	c6=0;
+						     		}
+
+						     			document.getElementById("success").innerHTML = "" ;
+						     			document.getElementById("result").innerHTML = "" ;
+			}
+
+			else{
+					c = c1+c2+c3+c4+c5+c6;
+
+					if(c==6)
+					{
+					 document.getElementById("name").value = "" ;
+     				 document.getElementById("uname").value = "" ;
+     				 document.getElementById("pass").value = "" ;
+     				 document.getElementById("repass").value = "" ;
+     				 document.getElementById("email").value = "" ;
+     				 document.getElementById("mob").value = "" ;
+
+			       document.getElementById("success").innerHTML = "Registered Successfully..!!";
+
+						str = "<b>User Details</b><br>";
+						str += "Name : "+n1+"<br>";
+						str += "User Name : "+n2+"<br>";
+						str += "Email id : "+n5+"<br>";
+						str += "Mobile Number : "+n6+"<br>";
+
+						document.getElementById("result").innerHTML = str;
+
+					}
+
+			}
+
+	    }
+
+     function fieldValidate() {
+
+     		n1 = document.getElementById("name").value;
+     		n2 = document.getElementById("uname").value;
+     		n3 = document.getElementById("pass").value;
+     		n4 = document.getElementById("repass").value;
+     		n5 = document.getElementById("email").value;
+     		n6 = document.getElementById("mob").value;
+
+     		flag_pass = n3.search(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/g);
+
+     		flag_email = n5.search(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gi);
+
+     		if(n1.length>0)
+     			{	document.getElementById("ename").innerHTML = "";	c1=1;	}
+
+     		if(n2.length>0)
+     			{	document.getElementById("euname").innerHTML = "";	c2=1;	}
+
+     		if(n3.length>0)
+     		{
+     		if(n3.length<8 || flag_pass<0 )
+     			{	document.getElementById("epass").innerHTML = "Passwords must contain atleast eight characters including uppercase lowercase numbers and special characters";	c3=0;	}
+
+     		else
+     			{	document.getElementById("epass").innerHTML="";	c3=1;	}
+     		}
+
+     		if(n4.length>0){
+     		if(n3!=n4 || n4.length<1)
+     			{	document.getElementById("erepass").innerHTML = "Password and Re-enter Password doesn't match";	c4=0;	}
+
+     		else
+     			{	document.getElementById("erepass").innerHTML="";	c4=1;	}  
+     		}
+
+     		if(n5.length>0)
+     		{
+     		if(flag_email>=0)
+     			{	document.getElementById("eemail").innerHTML="";		c5=1; }
+
+     		else
+     			{ document.getElementById("eemail").innerHTML="Invalid Email, Please provide valid Email";	c5=0;	}
+     		}
+
+     		if(n6.length>0){
+     		if(n6.length>10 || n6.length<10)
+     			{	document.getElementById("emob").innerHTML="Mobile Number should have 10 digits";	c6=0;	}
+
+     		else
+     			{	document.getElementById("emob").innerHTML="";	c6=1;	}
+
+     		}
+
+     }
+
+
+	</script>
+	
+</head>
+
+<center>
+
+<body>
+	
+		<h2><b>Registration Form:</b></h2>
+		<table  cellpadding=10>
+			<tr>
+			<th>Name</th>
+			<td><input type="text" id="name" onchange="fieldValidate()"></td>
+			<td><div id = "ename" >Please enter the Name</div></td>
+			</tr>
+
+			<tr>
+			<th>User Name</th>
+			<td><input type="text" id="uname" onchange="fieldValidate()"></td>
+			<td><div id = "euname" >Please enter the User name</div></td>
+			</tr>
+
+			<tr>
+			<th>Password</th>
+			<td><input type="password" id="pass" onchange="fieldValidate()"></td>
+			<td><div id = "epass" >Please enter the Password</div></td>
+			</tr>
+
+			<tr>
+			<th>Re-enter Password</th>
+			<td><input type="password" id="repass" onchange="fieldValidate()" ></td>
+			<td><div id = "erepass" >Please enter the Re-enter Password</div></td>
+			</tr>
+
+			<tr>
+			<th>Email ID</th>
+			<td><input type="text" id="email" onchange="fieldValidate()"></td>
+			<td><div id = "eemail" >Please enter the Email</div></td>
+			</tr>
+
+			<tr>
+			<th>Mobile Number</th>
+			<td><input type="text" id="mob" onchange="fieldValidate()" ></td>
+			<td><div id = "emob" >Please enter the Mobile Number</div></td>
+			</tr>
+
+			<tr>
+			<td  colspan="2" align="center"><button onclick="details()"><b>Register</b></button></td>
+			</tr>
+				
+
+		</table><br>
+
+<div id="success"></div><br>
+<div id="result"></div>
+
+		
+</body>
+</center>
+</html>

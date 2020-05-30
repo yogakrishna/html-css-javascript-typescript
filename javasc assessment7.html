@@ -1,0 +1,89 @@
+<html>
+
+<head>
+
+<script>
+
+function result()
+{ 
+
+    document.getElementById("para2").style.border="5px solid red";
+    document.getElementById("para2").style.width="250px";     
+   
+    document.getElementById("uname").style.border="5px solid red";
+    document.getElementById("pass").style.border="5px solid green";
+    document.getElementById("pas").style.border="5px solid blue";
+    document.getElementById("em").style.border="5px solid yellow";
+    document.getElementById("mo").style.border="5px solid pink";
+
+
+  var str="";
+  var name=document.getElementById("uname").value;
+  var password=document.getElementById("pass").value;
+  var Reenter=document.getElementById("pas").value;
+  var email=document.getElementById("em").value;
+  var c=document.getElementById("mo").value;
+ 
+
+ str+="<b>USER DETAILS</b>"+"<br>"+"Name:"+name+"<br>"+"Password:"+password+"<br>"+"Confirm Password"+Reenter+"<br>"+"Email:"+email+"<br>"+"Mobile Number:"+c;
+  document.getElementById("para2").innerHTML=str; 
+  document.getElementById("para1").innerHTML="REGESTRATION SUCCESSSFUL"; 
+
+
+}
+
+
+
+</script>
+</head>
+
+<center>
+<body>
+ <h1> Regestration Form </h1>
+<form>
+<table>
+
+<tr>
+<td><label for="Name">Name </label></td>
+<td><input type="text" id="uname" name="uname"></td>
+</tr>
+
+
+<tr>
+<td><label for="Password">Password</label></td>
+<td><input type="Password" id="pass" name="pass"></td>
+</tr>
+
+<tr>
+<td><label for="c password">RE-ENTER Password</label></td>
+<td><input type="password" id="pas" name="clg"></td>
+</tr>
+
+<tr>
+<td><label for="email">EMAIL</label></td>
+<td><input type="text" id="em" name="clg"></td>
+</tr>
+
+<tr>
+<td><label for="Mobile">Phone Number</label></td>
+<td><input type="number" id="mo" name="mob"></td>
+</tr>
+
+
+<tr>
+<td colspan="2" align="center"><button type="button" id="btn1" onclick="result()">
+submit</button></td>
+</tr>
+
+
+</table>
+</form>
+
+<p id="para1"  style="border:0px solid black;color:green;">  </p>
+<p id="para2" >      </p>
+
+
+
+</body>
+</center>
+</html>

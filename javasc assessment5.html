@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title> validation </title>
+
+
+
+</head>
+<center>
+<h1  style="color:red;"> validation </h1>
+<body>
+
+
+
+<table cellpadding=10>
+
+<tr>
+<td> Name </td>
+<td> <input type="text" id="num" ></td> <td> <div id="mydiv1"> </div></td>
+</tr>
+
+
+
+<tr>
+<td> User number </td>
+<td> <input type="text"  id="num1"></td> <td><p id="mydiv2"> </p></td>
+</tr>
+
+<tr>
+<td> Password </td>
+<td> <input type="password"  id="num2"></td> <td><p id="mydiv3"> </p></td>
+</tr>
+
+<tr>
+<td> Password </td>
+<td> <input type="password"  id="num6"></td> <td><p id="mydiv7"> </p></td>
+</tr>
+
+<tr>
+<td> Email id </td>
+<td> <input type="text"  id="num4" ></td> <td><p id="mydiv4"> </p></td>
+</tr>
+
+
+<tr>
+<td> Mobile </td>
+<td> <input type="number"  id="num5" ></td> <td><p id="mydiv5"> </p></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center"> <input type="submit"  id="num6" onclick="result()" style="border:5px solid red; color:blue;"></td>
+</tr>
+
+</table>
+
+
+<script>
+
+function result(){
+     
+ document.getElementById("mydiv1").style.border="5px solid red";
+document.getElementById("mydiv2").style.border="5px solid blue";
+document.getElementById("mydiv3").style.border="5px solid yellow";
+document.getElementById("mydiv4").style.border="5px solid green";
+document.getElementById("mydiv5").style.border="5px solid pink";
+
+document.getElementById("mydiv7").style.border="5px solid darkred";
+    
+      name=document.getElementById("num").value;
+      username=document.getElementById("num1").value;
+      password=document.getElementById("num2").value;
+     passwords=document.getElementById("num6").value;
+      emailid=document.getElementById("num4").value;
+      mobile=document.getElementById("num5").value; 
+
+    if(name=="")
+      {
+           document.getElementById("mydiv1").innerHTML="Please Enter Name";
+         }
+
+    
+if(username=="")
+      {
+           document.getElementById("mydiv2").innerHTML="Please Enter User Name";
+         }
+
+
+if(password=="")
+      {
+           document.getElementById("mydiv3").innerHTML="Enter Password";
+         }
+
+
+if(passwords=="")
+      {
+           document.getElementById("mydiv7").innerHTML="Re-enter Password";
+         }
+
+
+if(emailid=="")
+      {
+           document.getElementById("mydiv4").innerHTML="Please Email Id";
+         }
+
+if(mobile=="")
+      {
+           document.getElementById("mydiv5").innerHTML="Please Enter Mobile Name";
+         }
+  
+}
+
+</script>
+
+</body>
+</center>
+</html>

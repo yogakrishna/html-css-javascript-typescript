@@ -1,0 +1,44 @@
+<html>
+<head>
+<script>
+function myfun()
+{
+  var a=100;
+   var b=0;
+   
+
+try
+ {
+   if(b==0)
+
+  {
+    throw("divide by zero");
+  }
+ else
+{
+  var c=a/b;
+ alert(c);
+}
+}
+
+catch(e)
+{
+  alert("error is"+e);
+}
+
+finally
+{
+   alert("this is my finally block");
+}
+
+}
+</script>
+</head>
+
+<body>
+
+<button type="button" onclick="myfun()">clickhere</button>
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title> validation </title>
+
+</head>
+<center>
+<h1  style="color:red;"> Validation Form </h1>
+<body>
+
+<form onsubmit="return result()">
+
+<table cellpadding=10>
+
+<tr>
+<td> Name </td>
+<td> <input type="text" id="num" ></td> <td> <div id="mydiv"> </div></td>
+</tr>
+
+
+
+<tr>
+<td> User number </td>
+<td> <input type="text"  id="num1"></td> <td><p id="mydiv1"> </p></td>
+</tr>
+
+<tr>
+<td> Password </td>
+<td> <input type="text"  id="num2"></td> <td><p id="mydiv2"> </p></td>
+</tr>
+
+<tr>
+<td> Re-type Password </td>
+<td> <input type="text"  id="num3"></td> <td><p id="mydiv3"> </p></td>
+</tr>
+
+
+<tr>
+<td> Email id </td>
+<td> <input type="text"  id="num4" ></td> <td><p id="mydiv4"> </p></td>
+</tr>
+
+
+<tr>
+<td> Mobile </td>
+<td> <input type="text"  id="num5" ></td> <td><p id="mydiv5"> </p></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center"> <input type="submit"  id="num6" onclick="result()" style="border:5px solid red; color:blue;"></td>
+</tr>
+
+</table>
+
+</form>
+<script>
+
+function result(){
+     
+
+
+    var name=document.getElementById("num").value;
+    var username=document.getElementById("num1").value;
+    var password=document.getElementById("num2").value;
+    var passwords=document.getElementById("num3").value;
+    var emailid=document.getElementById("num4").value;
+    var  mobile=document.getElementById("num5").value; 
+
+    var usercheck= /^[A-Za-z.  ]{3,30}$/ ;
+    var passwordcheck= /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z09])(?!.*\s).{8,}$/ ;
+    var emailcheck= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
+    var phonecheck= /^[789][0-9]{9}$/;
+
+  if(usercheck.test(username)){
+    document.getElementById("mydiv1").innerHTML="  ";
+     }else{
+             document.getElementById("mydiv1").innerHTML=" user is invalid";
+                    return false;
+     }
+  if(passwordcheck.test(password)){
+    document.getElementById("mydiv2").innerHTML="  ";
+     }else{
+             document.getElementById("mydiv2").innerHTML=" password is invalid";
+                    return false;
+     }
+ if(passwords.match(password)){
+    document.getElementById("mydiv3").innerHTML="  ";
+     }else{
+             document.getElementById("mydiv3").innerHTML=" password must be equal ";
+                    return false;
+     }
+if(emailcheck.test(emailid)){
+    document.getElementById("mydiv4").innerHTML="  ";
+     }else{
+             document.getElementById("mydiv4").innerHTML=" Email is invalid";
+                    return false;
+     }
+if(phonecheck.test(mobile)){
+    document.getElementById("mydiv5").innerHTML="  ";
+     }else{
+             document.getElementById("mydiv5").innerHTML=" mobile is invalid";
+                    return false;
+     }
+    
+      } 
+
+
+</script>
+
+
+
+</body>
+
+</center>
+</html>

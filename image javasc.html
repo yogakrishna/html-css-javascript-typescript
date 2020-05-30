@@ -1,0 +1,48 @@
+<html>
+<head>
+<script>
+
+function myFun(name)
+ {
+  document.getElementById("txt").value=name;
+  
+ }
+</script>
+</head>
+<body>
+
+
+<input type="text" id="txt">
+<img src="usemap.gif"  usemap="#mymap">
+<map name="mymap">
+<area shape="poly"
+coords="74,0,113,29,98,72,52,72,38,27"
+href="/perl/index.htm"
+target="_self"
+onMouseOver="myFun('perl')"
+onMouseOut="myFun('')"/>
+
+
+<map name="mymap">
+<area shape="rect"
+coords="22,83,126,125"
+href="/rect/index.htm"
+target="_self"
+onMouseOver="myFun('HTML')"
+onMouseOut="myFun('')"/>
+
+
+
+
+<map name="mymap">
+<area shape="circle"
+coords="73,168,32"
+href="/circle/index.htm"
+target="_self"
+onMouseOver="myFun('PHP')"
+onMouseOut="myFun('')"/>
+
+</body>
+</html>
+
+

@@ -1,0 +1,109 @@
+<html>
+
+<head>
+<script>
+
+function click1()
+{
+  ftype=false;
+  etype=false;
+  name=document.getElementById("name").value;
+  phonenumber=document.getElementById("phoneNumber").value;
+  address=document.getElementById("address").value;
+  type=document.getElementById("type").value;
+  extra=document.getElementById("extra").value;
+  cost=0;
+  if(type=="grand")
+  ftype=true;
+  if(extra=="yes")
+   etype=true;
+
+  if(Boolean(ftype))
+{ 
+  cost=150000;
+  if(Boolean(etype))
+   {
+   cost=cost+20000;
+   }
+     else
+      {
+        cost=cost;
+      }
+ } 
+     else
+    {
+        cost=50000;
+        if(Boolean(etype))
+         {
+             cost=cost+20000;
+	  }
+   
+         else
+         {
+            cost=cost;
+         }
+     }
+document.getElementById("div1").innerHTML=name+phonenumber+address+cost;
+}
+
+
+
+
+
+
+</script>
+</head>
+
+
+<body>
+
+<center>
+
+
+<h1> Wedding Decoration Cost Calucaion </h1>
+
+<table  border=1 style="border:2px solid black;">
+
+<tr>
+<td>Name</td>
+<td><input type="text" id="name"></td>
+</tr>
+
+<tr>
+<td> PhoneNumber </td>
+<td> <input type="numder" id="phoneNumber"></td>
+</tr>
+
+<tr>
+  <td>Address </td> 
+<td><input type="text" id="address"></td>
+</tr>
+
+<tr>
+ <td>flower decoration type</td>
+ <td><select id="type">
+<option value="grand" >grand</option>
+<option value="normal">normal</option>
+</select></td>
+</tr>
+
+<tr>
+ <td> extra flower decoration </td>
+<td><select id="extra">
+<option value="yes" >yes</option>
+<option value="no" >no</option>
+</select></td>
+</tr>
+
+
+</table>
+
+<button type="button" id="btn1" onclick="click1()">calculate the cost </button>
+
+<br>
+
+ <p id="div1"> </p>
+</center>
+</body>
+
+</html>

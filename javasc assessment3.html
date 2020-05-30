@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title> validation </title>
+
+</head>
+<center>
+<h1  style="color:red;"> validation </h1>
+<body>
+
+<form action="#" method="post" onsubmit="return validation();">
+<table cellpadding=10>
+<tr>
+<td> phone number</td>
+<td><input type="text" name="Phonenumber" id="name1"></td><td><div id="eresult"> </div></td>
+</tr>
+
+<tr>
+<td>card number </td>
+<td> <input type="text" name="card number" id="name2"></td><td><div id="eresult1"> </div></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<input type="submit" name="submit" value="submit">
+</td>
+</tr>
+</table>
+</form>
+
+
+
+<script>
+
+function validation(){
+ var phonenumber = document.getElementById("name1").value;
+ var cardnumber = document.getElementById("name2").value;
+  if(phonenumber=='' || cardnumber=='')
+    {
+     document.getElementById("eresult").innerHTML="All fields are Required";
+     return false;
+  }
+  else if(phonenumber.length<10 || phonenumber.length>10){
+     document.getElementById("eresult").innerHTML="numbers must be 10 digits";
+      return false;
+ }
+
+
+    else if(cardnumber.length<16 || cardnumber.length<16){
+      document.getElementById("eresult1").innerHTML="numbers must be 16 digits";
+      return false;
+ }
+
+
+    else {
+          return true;
+ 
+     }
+    
+}
+
+
+</script>
+</body>
+</center>
+</html>

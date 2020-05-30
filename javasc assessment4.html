@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title> validation </title>
+
+</head>
+<center>
+<h1  style="color:red;"> validation </h1>
+<body>
+
+
+
+<table cellpadding=10>
+
+<tr>
+<td> Phone number </td>
+<td> <input type="text"  id="num" onkeydown="phn()"></td> <td><p id="mydiv1"> </p></td>
+</tr>
+
+
+<tr>
+<td> Card number </td>
+<td> <input type="text"  id="num2"  onkeydown="cdn()"></td> <td><p id="mydiv2"> </p></td>
+</tr>
+
+
+<tr>
+<td colspan="2" align="center"> <input type="submit"  onclick="validate()"></td> <td><p id="mydiv3"> </p></td>
+</tr>
+
+</table>
+
+
+<script>
+
+function phn(){
+    document.getElementById("mydiv1").innerHTML=" check phone number";
+    
+}
+
+
+function cdn(){
+    document.getElementById("mydiv2").innerHTML="check card number";
+    
+}
+
+
+function validate(){
+    
+      document.getElementById("mydiv3").innerHTML="VALIDATING";
+}
+
+
+
+</script>
+</body>
+</center>
+</html>

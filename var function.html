@@ -1,0 +1,26 @@
+<html>
+<head>
+<script>
+ var function1=new Function("para1","para2","return para1+para2");
+
+ function function2()
+{
+  var result;
+  result=function1("Hello","Word");
+  document.getElementById("p1").innerHTML=result;
+}
+
+</script>
+</head>
+
+
+<body>
+
+
+<button type="button" id="btn1" onclick="function2()"> clickhere</button>
+
+<p id="p1"> </p>
+
+</body>
+
+</html>

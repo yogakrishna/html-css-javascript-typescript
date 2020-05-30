@@ -1,0 +1,66 @@
+<html>
+<head>
+<script>
+function myfun()
+{
+
+  var a;
+  var a=document.getElementById("num").value;
+  
+   if(a=="")
+  {   
+     document.getElementById("message").innerHTML="Pleae Fill Mobile Number";
+     return false;
+  }
+    if(isNaN(a))
+     {
+       document.getElementById("message").innerHTML="Only Numbers Are  Allowed";
+	return false;
+      }
+	if(a.length<10)
+         {
+
+		document.getElementById("message").innerHTML="Mobile Number Must be 10  digits";
+		return false;
+	   }
+
+         if(a.length>10)
+             {
+  
+		document.getElementById("message").innerHTML="Mobile Number Must not exceed 10 digits";
+		return false;
+	     }
+
+}
+
+
+
+</script>
+</head>
+
+<center>
+<h1 style="color:red;"> Validation table</h1>
+<body>
+
+<form  onsubmit="return myfun()"+>
+<table cellpadding=10>
+
+<tr>
+<td> phone number </td>
+<td><input type="text" id="num"  value=""><span id="message"> </span></td>
+</tr>
+
+<tr>
+<td> cerdit card number </td>
+<td><input type="text" id="num1"></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center"><input type="submit" value="submit" ></td>
+</tr>
+
+</table>
+</form>
+</body>
+</center>
+</html>

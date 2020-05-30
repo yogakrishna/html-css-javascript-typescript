@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+var userflag=false;
+var usernameflag=false;
+var passwordflag=false;
+var repassflag=false;
+var emailflag=false;
+var mobileflag=false;
+function fieldValidate()
+{
+  var user=document.getElementById("name").value;
+  var username=document.getElementById("UserName").value;
+  var password=document.getElementById("password").value;
+  var repass=document.getElementById("reenter").value;
+  var email=document.getElementById("email").value;
+  var mobile=document.getElementById("mobile").value;
+   var r1=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z09])(?!.*\s).{8,}$/;
+
+  var c=password.localeCompare(repass);
+  
+
+if(user.length==0)
+ {
+  document.getElementById("errorName").innerHTML="Please Enter name";
+ }
+else 
+  { 
+   userflag=true;
+    document.getElementById("errorName").innerHTML="";
+  }
+ 
+
+if(!password.match(r1))
+ {
+   document.getElementById("errorPassword").innerHTML="Password has to match";
+  }
+
+else if(password.length==0)
+ {
+  document.getElementById("errorPassword").innerHTML="Please Enter Password";
+ }
+
+else
+{ 
+   passwordflag=true;
+  document.getElementById("errorPassword").innerHTML="";
+ }
+
+ if(username.length==0)
+{
+  document.getElementById("errorUserName").innerHTML="Please Enter User Name";
+}
+
+else 
+  {
+    usernameflag=true;
+    document.getElementById("errorUserName").innerHTML="";
+  }
+
+if(c!=0){
+ document.getElementById("errorPassword").innerHTML="Password and Repassword is not same";
+}
+
+else if(repass.length==0)
+{
+ document.getElementById("errorReEnter").innerHTML="Please Enter Re Password";
+}
+  else
+  {
+    repassflag=true;
+   document.getElementById("errorReEnter").innerHTML=" ";
+   }
+
+if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)))
+{
+  document.getElementById("errorMail").innerHTML="Invalid Email ";
+}
+ else if(email.length==0)
+ {
+  document.getElementById("errorMail").innerHTML=" enter email";
+ }
+
+else
+{
+ emailflag=true;
+ document.getElementById("errorMail").innerHTML=" ";
+
+}
+
+if(!(mobile.length==10))
+{
+ document.getElementById("errorMobile").innerHTML=" mobile should have 10 digits ";
+}
+
+else if(mobile.length==0)
+ {
+  document.getElementById("errorPassword").innerHTML="Please Enter mobile number";
+ }
+else
+ {
+   mobileflag=true;
+   document.getElementById("errorMobile").innerHTML="";
+ }
+  
+}
+ 
+function details()
+{
+
+  document.getElementById("para2").style.border="5px solid red";
+  document.getElementById("para2").style.width="250px";  
+document.getElementById("para1").style.color="green";
+
+  var user=document.getElementById("name").value;
+  var username=document.getElementById("UserName").value;
+  var password=document.getElementById("password").value;
+  var repass=document.getElementById("reenter").value;
+  var email=document.getElementById("email").value;
+  var mobile=document.getElementById("mobile").value;
+  
+  
+   if(userflag && usernameflag && passwordflag && repassflag  && emailflag  && mobileflag){
+
+   document.getElementById("para1").innerHTML="REGESTRATION SUCCESSFUL";
+
+
+  document.getElementById("para2").innerHTML="</b>USER DETAILS:</b>"+"<br>"+"Name:"+user+"<br>"+"User name:"+username+"<br>"+"Email:"+email+"<br>"+"Mobile"+mobile;
+}
+}
+
+</script>
+
+</head>
+
+<center>
+
+<body>
+
+<h1>Registration Form</h1>
+
+<table cellpadding=10>
+
+<tr>
+<td> Name </td>
+<td> <input type="text" id="name" onchange="fieldValidate()"></td> <td> <div id="errorName"> </div></td>
+</tr>
+
+
+
+<tr>
+<td> User number </td>
+<td> <input type="text"  id="UserName" onchange="fieldValidate()"></td> <td><div id="errorUserName"> </div></td>
+</tr>
+
+<tr>
+<td> Password </td>
+<td> <input type="text"  id="password" onchange="fieldValidate()"></td> <td><div id="errorPassword"> </div></td>
+</tr>
+
+<tr>
+<td> Re-type Password </td>
+<td> <input type="text"  id="reenter" onchange="fieldValidate()"></td> <td><div id="errorReEnter"> </div></td>
+</tr>
+
+
+<tr>
+<td> Email id </td>
+<td> <input type="text"  id="email" onchange="fieldValidate()"></td> <td><div id="errorMail"> </div></td>
+</tr>
+
+
+<tr>
+<td> Mobile </td>
+<td> <input type="text"  id="mobile" onchange="fieldValidate()" ></td> <td><div id="errorMobile"> </div></td>
+</tr>
+
+<tr>
+<td></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<input type="submit" id="submit" onclick="details()"></td>
+</tr>
+
+
+
+
+</table>
+
+
+<div id="para1"> </div>
+<div id="para2"> </div>
+
+</body>
+
+</center>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

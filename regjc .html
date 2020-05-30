@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+var ress=0;
+    function fieldValidate()
+    {
+      var name=document.getElementById("name").value;
+      var User_name=document.getElementById("User_name").value;
+      var Password=document.getElementById("Password").value;
+      var re_pass=document.getElementById("reEnter").value;
+      var mail=document.getElementById("mail").value;
+      var mobile=document.getElementById("mobil").value;
+      if(name=="")
+      {
+        document.getElementById("err-name").innerHTML="Please enter the name";
+        ress=0;
+      }
+      else
+      {
+        document.getElementById("err-name").innerHTML=" ";
+        ress+=1;
+      }
+      if(User_name=="")
+      {
+        document.getElementById("err-UserName").innerHTML="Please enter the UserName";
+        ress=0;
+      }
+      else
+      {
+        document.getElementById("err-UserName").innerHTML=" ";
+        ress+=1;
+      }
+      if(Password=="")
+      {
+        document.getElementById("err-password").innerHTML="Please enter the Password";
+        ress=0;
+      }
+      else
+      {
+        if(!(Password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z09])(?!.*\s).{8,}$/)))
+        {
+          document.getElementById("err-password").innerHTML="Password must contain atleast eight charecter,including uppercase,lowercase,number and special charecter";
+          ress=0;
+        }
+        else
+        {
+          document.getElementById("err-password").innerHTML=" ";
+          ress+=1;
+        } 
+      }
+      if(re_pass=="")
+      {
+        document.getElementById("err-RePass").innerHTML="Re-enter the Password";
+        ress=0;
+      }
+      else
+      {
+        if(Password!=re_pass)
+        {
+          document.getElementById("err-RePass").innerHTML="Password and re-entered Password mismatch";
+          ress=0;
+        }
+        else
+        {
+          document.getElementById("err-RePass").innerHTML=" ";
+          ress+=1;
+        }
+      }
+      if(mail=="")
+      {
+        document.getElementById("err-mail").innerHTML="Please enter the mail id";
+        ress=0;
+      }
+      else
+      {
+        if(!(mail.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)))
+        {
+          document.getElementById("err-mail").innerHTML="Invaid E-mail, please enter the valide e-mail";
+          ress=0;
+        }
+        else
+        {
+          document.getElementById("err-mail").innerHTML=" ";
+          ress+=1;
+        }
+      }
+      if(mobile=="")
+      {
+        document.getElementById("err-mobil").innerHTML="Please enter the MobileNumber";
+        ress=0;
+      }
+      else
+      {
+        if(!(mobile.length==10))
+        {
+          document.getElementById("err-mobil").innerHTML="Mobil number should have 10 digit";
+          ress=0;
+        }
+        else
+        {
+          document.getElementById("err-mobil").innerHTML=" ";
+          ress+=1;
+        }
+      }
+    }
+      function details()
+      {
+        var name=document.getElementById("name").value;
+        var User_name=document.getElementById("User_name").value;
+        var mail=document.getElementById("mail").value;
+        var mobile=document.getElementById("mobil").value;
+        if(ress>5)
+        {
+          document.getElementById("reg-result").innerHTML="Registration Successfull!!";
+          var st="<h3>User Details</h3><br>Name:"+name+"<br>User Name:"+User_name+"<br>Email ID:"+mail+"<br>Mobil Number:"+mobile+"<br>";
+          document.getElementById("reg-display").innerHTML=st;
+        }
+        else
+        {
+          alert("enter the data corectly");
+        }
+
+      }
+</script>
+   <title> validation </title>
+</head>
+<body>
+    <center>
+        <div class="reg-form" style="background-color: lightskyblue">
+  <h3>Registration Form</h3>
+  <br>
+  <table>
+    <tr>
+      <td><label>Name:</label></td>
+      <td><input type="text" name="name" id="name" onchange="fieldValidate();"></td>
+      <td><p id="err-name" style="color: red;"></p></td>
+    </tr>
+    <tr>
+      <td><label>User Name:</label></td>
+      <td><input type="text" name="U_name" id="User_name" onchange="fieldValidate();"></td>
+      <td><p id="err-UserName" style="color: red;"></p></td>
+    </tr>
+    <tr>
+      <td><label>Password:</label></td>
+      <td><input type="text" name="Password" id="Password" onchange="fieldValidate();"></td>
+      <td><p id="err-password" style="color: red;"></p></td>
+    </tr>
+    <tr>
+      <td><label>Re-enter Password:</label></td>
+      <td><input type="text" name="re-pass" id="reEnter" onchange="fieldValidate();"></td>
+      <td><p id="err-RePass" style="color: red;"></p></td>
+    </tr>
+    <tr>
+      <td><label>E-mail ID:</label></td>
+      <td><input type="email" name="mail" id="mail" onchange="fieldValidate();"></td>
+      <td><p id="err-mail" style="color: red;"></p></td>
+    </tr>
+    <tr>
+      <td><label>Mobil Number:</label></td>
+      <td><input type="tel" name="mobil" id="mobil" onchange="fieldValidate();"></td>
+      <td><p id="err-mobil" style="color: red;"></p></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <center><button id="register" onclick="details();">Register</button></center>
+      </td>
+    </tr>
+  </table>
+  <br>
+ 
+    <h5 id="reg-result" style="color: green;"></h5>
+    <p id="reg-display" style="text-align: left;"></p>
+  
+</div>
+</body>
+
+</center>
+</html>
