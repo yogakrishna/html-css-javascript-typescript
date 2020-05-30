@@ -1,0 +1,35 @@
+<html>
+<head>
+<script>
+
+function Book(tittle,author)
+{
+  this.author=author;
+  this.tittle=tittle;
+  this.Price=Price;
+}
+
+function Price(price)
+{
+   var tax;
+   tax=300;
+  this.price=price+tax;
+}
+
+
+</script>
+</head>
+<body>
+<script>
+
+var book=new Book("english","yoga");
+book.Price(200);
+document.write("Book name:"+book.tittle+"<br>");
+document.write("Book name:"+book.author+"<br>");
+document.write("Price is"+book.price);
+
+
+</script>
+
+</body>
+</html>

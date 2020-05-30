@@ -1,0 +1,83 @@
+<html>
+<head>
+<script> 
+
+function Event(name,password,date,time)
+{
+   this.name=name;
+   this.password=password;
+   this.date=date;
+    this.time=time;
+}
+
+
+function result()
+{
+
+   var str;
+   var str2;
+   var ename=document.getElementById("uname").value;
+   var epassword=document.getElementById("pass").value;
+   var edate=document.getElementById("clg").value;
+   var etime=document.getElementById("tim").value;
+
+   var e=new Event(ename,epassword,edate,etime);
+   
+   document.getElementById("para1").innerHTML="User Name:"+e.name+"<br>"+"Password:"+e.password+"<br>"+"Date:"+e.date+"<br>"+"Time:"+e.time+"<br>";
+
+   document.getElementById("ti").innerHTML=e.name+" "+e.password+" "+e.date+"  " +e.time;;
+
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+<table>
+
+<tr>
+<td><label for="User Name">User Name</label></td>
+<td><input type="text" id="uname" name="uname"></td>
+</tr>
+
+
+
+<tr>
+<td><label for="Password">Password</label></td>
+<td><input type="password" id="pass" name="pass"></td>
+</tr>
+
+
+<tr>
+<td><label for="Date">Date </label></td>
+<td><input type="date" id="clg" name="clg"></td>
+</tr>
+
+<tr>
+<td><label for="Time"> Time </label></td>
+<td><input type="time" id="tim" name="tim"></td>
+</tr>
+
+
+<tr>
+<td><button type="button" id="btn1" onclick="result()">
+Clickhere</button></td>
+</tr>
+
+
+</table>
+
+<textarea name="address" id="ti" rows="10" cols="10" ></textarea>
+
+
+
+<p id="para1"  style="border:2px solid black;color:black;">   </p>
+<p id="para2"  style="border:2px solid red;color:red;" >      </p>
+<p id="para3"  style="border:2px solid blue;color:blue;">     </p>
+
+</body>
+
+</html>

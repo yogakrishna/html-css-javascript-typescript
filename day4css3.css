@@ -1,0 +1,19 @@
+h1
+{
+ text-align:center;
+ text-transform:capitalize;
+}
+
+table
+{
+border-collapse:collapse;
+}
+.even
+{
+background-color:#b3edcf;
+}
+
+.odd
+{
+background-color:#e0f0e9;
+}

@@ -1,0 +1,50 @@
+
+
+<html>
+<head>
+
+<script>
+function get()
+{
+    var i;
+    var t="";
+    var val=Number(document.getElementById("val").value);
+    for(i=1;i<val;i++)
+{
+    if(i%2==0)
+  {
+   t+=i+"     ";
+   }
+  }
+document.getElementById("Mypara").style.border="5px solid black";
+document.getElementById("Mypara").innerHTML=t;
+}
+
+
+</script>
+
+</head>
+<body>
+
+
+<table>
+
+
+<tr>
+<td><label for="age"> Enter your input</label></td>
+<td><input type="text" id="val" name="val"></td>
+</tr>
+
+
+<tr>
+<td colspan="2"><button type="button" id="btn1" onclick="get()" >
+clickhere </button></td>
+</tr>
+
+</table>
+
+<p id="Mypara" style="border:0px;"></p>
+
+</body>
+
+</html>

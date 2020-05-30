@@ -1,0 +1,118 @@
+<html>
+
+<head>
+
+<script>
+
+function click1()
+{
+var name=document.getElementById("uname").value;
+alert("welcome"+name);
+}
+
+var a=10;
+var b=20;
+var c="Hello";
+var linebreak="<br>";
+
+document.write("a+b==>");
+var result=c+a+b;
+document.write(result);
+document.write(linebreak);
+
+
+
+document.write("a-b==>");
+var result=a-b;
+document.write(result);
+document.write(linebreak);
+
+document.write("a%b==>");
+var result=a%b;
+document.write(result);
+document.write(linebreak);
+
+
+document.write("a*b==>");
+var result=a*b;
+document.write(result);
+document.write(linebreak);
+
+
+document.write("a>b==>");
+var result=a>b;
+document.write(result);
+document.write(linebreak);
+
+
+var x=true;
+var y=false;
+var age=18;
+
+document.write("x"||"y");
+var result=x||y;
+document.write(result);
+document.write(linebreak);
+
+//conditionoperator
+
+document.write("ternary operator  ");
+var result=(age<=18)?"too young":"Old Enough";
+document.write(result);
+document.write(linebreak);
+
+
+document.write("ternary operator  ");
+var result=typeof str;
+document.write(result);
+document.write(linebreak);
+
+//bitwiseoperator
+
+var d=5;
+var e=1;
+
+document.write("Bitwise | ");
+var result=d|e
+document.write(result);
+document.write(linebreak);
+
+document.write("Bitwise & ");
+var result=d&e
+document.write(result);
+document.write(linebreak);
+
+document.write("Bitwise ~ ");
+var result=~d;
+document.write(result);
+document.write(linebreak);
+
+
+
+
+</script>
+
+</head>
+
+<body>
+<table>
+
+<tr>
+<td><label for="user name"> User name</label></td>
+<td><input type="text" id="uname" name="uname"></td>
+</tr>
+
+<tr>
+<td><label for="password"> password</label></td>
+<td><input type="password" id="password" name="password"></td>
+</tr>
+
+<tr>
+<td colspan="2"><button type="buttom" id="btn1" onclick="click1()">clickhere</td>
+</tr>
+
+</table>
+</body>
+
+</html>
+

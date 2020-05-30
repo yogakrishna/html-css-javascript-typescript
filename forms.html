@@ -1,0 +1,108 @@
+<html>
+<head>
+<tittle>
+</tittle>
+</head>
+<body>
+<form>
+<center>
+<fieldset>
+<legend> Login Details
+</legend>
+<table>
+<tr>
+<th colspan="2">Registration form</th>
+</tr>
+
+<!--To create user name -->
+
+<tr>
+<td><label for="username">username</label></td>
+<td><input type="username" name="username" id="username"
+autofocus="on" autocomplete="off" maxlength="10" placeholder="type username" required></td>
+</tr>
+
+<!--To create password -->
+
+<tr>
+<td><label for="password">password</label></td>
+<td><input type="password" name="password" id="password" placeholder="type password"></td>
+</tr>
+
+
+<!--To create address -->
+
+<tr>
+<td><label for="address">Address</label></td>
+<td><textarea name="address" id="address" col="20" row="15" style="resize:none"></textarea></td>
+</tr>
+
+<!--to create buttons-->
+
+<tr>
+<td><input type="submit" value="submit"></td>
+<td><input type="reset"  value="reset"></td>
+</td> 
+
+</table>
+</fieldset>
+
+<fieldset>
+<table>
+<legend> how to create radio buttons,check buttons</legend>
+
+<tr>
+<td><label for="favrcolor">select your colors</td>
+<td><input type="checkbox" name="favcolor" value="blue" checked>blue</td>
+<td><input type="checkbox" name="favcolor" value="red">red</td>
+<td><input type="checkbox" name="favcolor" value="green">green</td>
+<td><input type="checkbox" name="favcolor" value="black">black</td>
+</tr>
+
+<tr>
+<td><label for="choose one">select your gender</td>
+<td><input type="radio" name="gender" value="male">male</td>
+<td><input type="radio" name="gender" value="female">female</td>
+</tr>
+
+<!--how to create options-->
+
+<tr>
+<td><label for="options">select your country</td>
+<td>
+<select>
+<option>choose an option</option>
+<option value="india">india</option>
+<option value="usa">usa</option>
+<option value="China">china</option>
+</select>
+</td>
+</tr>
+
+<!--datalist-->
+<tr>
+<td><label for="department">select your department</td>
+<td><input list="department" /td>
+<td>
+<datalist id="department">
+<option>department</option>
+<option value="CSE">CSE</option>
+<option value="EC">EC</option>
+<option value="EEE">EEE</option>
+<option value="MECH">MECH</option>
+<option value="BIO">BIO</option>
+</datalist>
+</td>
+</tr>
+
+<!--how to upload a file-->
+
+<tr>
+<td>please upload a file</td>
+<td><input type="file" value="upload"></td>
+</tr>
+
+</center>
+</table>
+</fieldset>
+</html>

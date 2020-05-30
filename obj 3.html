@@ -1,0 +1,90 @@
+<htmml>
+<head>
+<script>
+function Address(line1,city,state)
+{
+  this.line1=line1;
+  this.city=state;
+  this.state=state;
+}
+
+function Address1()
+{
+   var str;
+   var b;
+  var line1=document.getElementById("line1").value;
+  var city=document.getElementById("city").value;
+  var state=document.getElementById("state").value;
+ 
+   var add=new Address(line1,city,state);
+   
+   var str="<input type='text' id='pincode'>";
+   var b= "<button type='button' id='btn2' onclick='Address2()'>display</button>";
+   document.getElementById("div1").innerHTML="Enter pincode:"+str+"<br>"+b;
+ 
+
+}
+
+function Address2()
+
+{
+
+
+  var str;
+   var b;
+  var line1=document.getElementById("line1").value;
+  var city=document.getElementById("city").value;
+  var state=document.getElementById("state").value;
+ 
+  var a=new Address(line1,city,state);
+
+   a.pincode=document.getElementById("pincode").value;
+
+  document.getElementById("div2").innerHTML=a.line1+"<br>"+a.city+"<br>"+a.state+"<br>"+a.pincode;
+
+ 
+
+}
+
+
+</script>
+</head>
+<body>
+<table>
+
+<tr>
+<th colspan="2">EventDetails</th>
+</tr>
+
+
+
+<tr>
+<td>EventAddress line 1</td>
+<td><input type="text" id="line1"</td>
+</tr>
+
+
+<tr>
+<td>City</td>
+<td><input type="text" id="city"</td>
+</tr>
+
+
+<tr>
+<td>State</td>
+<td><input type="text" id="state"</td>
+</tr>
+
+<tr>
+<td><button type="button" id="btn1" onclick="Address1()">ClickHere</button></td>
+</tr>
+
+</table>
+
+  <div id="div1"> </div>
+    <div id="div2"> </div>
+
+
+
+</body>
+</html>

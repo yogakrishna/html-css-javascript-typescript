@@ -1,0 +1,44 @@
+<html>
+</head>
+
+<script>
+
+function getresult()
+{
+var i;
+var txt=""
+var val=parseInt(document.getElementById("tbvalue").value);
+for(i=1;i<=10;i++)
+  {
+     txt+=i+"*"+val+"="+(i*val)+"<br>";
+  }
+   
+    document.getElementById("mydiv").innerHTML=txt;
+   
+}
+
+
+</script>
+
+</head>
+<body>
+
+<table>
+
+
+<tr>
+<td><label for="user name"> Enter your name</label></td>
+<td><input type="text" id="tbvalue" name="tbvalue"></td>
+</tr>
+
+
+<tr>
+<td colspan="2"><button type="button" id="btn1" onclick="getresult()" >clickhere</button></td>
+</tr>
+
+</table>
+
+<p id="mydiv" style="border:5px solid blue">  </p>
+
+</body>
+</html>

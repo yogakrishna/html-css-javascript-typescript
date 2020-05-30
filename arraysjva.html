@@ -1,0 +1,69 @@
+<html>
+<head>
+<script>
+
+function Event(name,venue,date)
+{
+  this.name=name;
+  this.venue=venue;
+  this.date=date;
+}
+ var listevent=[];
+function addEvent()
+{
+   name=document.getElementById("ename").value;
+   venue=document.getElementById("venue").value;
+   date=document.getElementById("date").value;
+   var e=new Event(name,venue,date);
+    listevent.push(e);
+}
+
+function displayEvent()
+{
+  var html="<table border=1><tr><th>Event Name</th><th>Event Venue</th><th>Date</th></tr>";
+  for(var i=0;i<listevent.length;i++)
+{
+   html+="<tr>";
+   html+="<td>"+listevent[i].name+"</td>";
+   html+="<td>"+listevent[i].venue+"</td>"; 
+   html+="<td>"+listevent[i].date+"</td>";  
+   html+="</tr>";
+}
+html+="</table>";
+document.getElementById("div1").innerHTML=html;
+}
+
+
+</script>
+</head>
+<body>
+<table>
+<tr>
+<td>Enter Event Name</td>
+<td><input type="text"  id="ename"></td>
+</tr>
+
+<tr>
+<td>Enter Event venue</td>
+<td><input type="text"  id="venue"></td>
+</tr>
+
+
+<tr>
+<td>Enter Event date</td>
+<td><input type="date"  id="date"></td>
+</tr>
+
+
+<tr>
+<td><button type="button" id="btn1" onclick="addEvent()" > addevent </button> </td>
+<td><button type="button" id="btn2" onclick="displayEvent()" >  displayevent </button> </td>
+</tr>
+
+
+</table>
+
+<div id="div1"> </div>
+
+</body>
+</html>

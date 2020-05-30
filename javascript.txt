@@ -1,0 +1,11 @@
+java script
+  
+    -java script is a lightweight,cross-platform,object-oriented programming language.
+    -it is one of the three core technologies of web development.
+    - Today, javascript can be used in different places.
+         . client-side : javascript was traditionally only used in the browser.
+         . server-side : we can also use node.js or javascript as well.
+    -Javascript is what made modern webdevelopment possible.
+        . Dynamic effects and interactivity.
+        . modern web applications that we can interact with
+    . Frame works/liberaries like react and angular are 100% based on java script.

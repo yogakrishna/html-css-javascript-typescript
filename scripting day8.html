@@ -1,0 +1,71 @@
+<html>
+
+<head>
+
+<script>
+
+function result()
+{ 
+  var str="";
+  var name=document.getElementById("uname").value;
+  var password=document.getElementById("pass").value;
+  var mobile=document.getElementById("mob").value;
+  var college=document.getElementById("clg").value;
+  
+ str+="Name:"+name+"<br>"+"Password:"+password+"<br>"+"Mobile Number:"+mobile+"<br>"+"CollegeName:"+college;
+  document.getElementById("para1").innerHTML=str; 
+  document.getElementById("para2").innerHTML=str; 
+  document.getElementById("para3").innerHTML=str; 
+
+}
+
+
+
+</script>
+</head>
+
+<body>
+
+<form>
+<table>
+
+<tr>
+<td><label for="Name">Name </label></td>
+<td><input type="text" id="uname" name="uname"></td>
+</tr>
+
+
+<tr>
+<td><label for="Password">Password</label></td>
+<td><input type="Password" id="pass" name="pass"></td>
+</tr>
+
+<tr>
+<td><label for="Mobile">Mobile</label></td>
+<td><input type="number" id="mob" name="mob"></td>
+</tr>
+
+
+<tr>
+<td><label for="College">College </label></td>
+<td><input type="text" id="clg" name="clg"></td>
+</tr>
+
+
+
+<tr>
+<td><button type="button" id="btn1" onclick="result()">
+Clickhere</button></td>
+</tr>
+
+
+</table>
+</form>
+
+<p id="para1"  style="border:2px solid black;color:black;">   </p>
+<p id="para2"  style="border:2px solid red;color:red;" >      </p>
+<p id="para3"  style="border:2px solid blue;color:blue;">     </p>
+
+
+</body>
+</html>
